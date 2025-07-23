@@ -16,8 +16,8 @@
 I am a Computer Science and Physics Undergraduate at the Penn State University.
 
 - 🔭 I am involved in multi-domain research trying to use AI to build the future.
-- ⚡ I am also a Full-Stack Developer, building frontend and backend for building web and mobile-based applications.
-- 🌱 Wandering around like a lost soul in my free time.
+- ⚡ I am also a Full-Stack Developer, building frontend and backend for web and mobile-based applications.
+- 🌱 Working out, learning languages and music, and playing racket sports in my free time.
 
 
 ---
