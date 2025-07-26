@@ -3,7 +3,7 @@
 <p align="center">
 </p>
 <p align="center">
-<a href="https://www.linkedin.com/in/suryansh-sijwali-b807a6292/"><img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"></a>
+<a href="https://www.linkedin.com/in/suryansh-sijwali"><img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"></a>
 </p>
 <p align="center"><img src="https://komarev.com/ghpvc/?username=SuryanshSS1011&abbreviated=true&style=flat-square&color=blue" alt=""></p>
 
