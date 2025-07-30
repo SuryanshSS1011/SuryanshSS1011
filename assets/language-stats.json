@@ -2,39 +2,44 @@
   "languages": [
     {
       "name": "JavaScript",
-      "percentage": "56.63",
+      "percentage": "64.69",
       "color": "#f1e05a"
     },
     {
       "name": "TypeScript",
-      "percentage": "35.94",
+      "percentage": "19.59",
       "color": "#3178c6"
     },
     {
-      "name": "Solidity",
-      "percentage": "2.44",
-      "color": "#AA6746"
-    },
-    {
-      "name": "HTML",
-      "percentage": "2.19",
-      "color": "#e34c26"
-    },
-    {
-      "name": "Python",
-      "percentage": "1.31",
-      "color": "#3572A5"
-    },
-    {
       "name": "CSS",
-      "percentage": "1.29",
+      "percentage": "5.91",
       "color": "#663399"
     },
     {
-      "name": "Shell",
-      "percentage": "0.20",
-      "color": "#89e051"
+      "name": "HTML",
+      "percentage": "3.35",
+      "color": "#e34c26"
+    },
+    {
+      "name": "Kotlin",
+      "percentage": "3.19",
+      "color": "#A97BFF"
+    },
+    {
+      "name": "Swift",
+      "percentage": "1.47",
+      "color": "#F05138"
+    },
+    {
+      "name": "SCSS",
+      "percentage": "0.85",
+      "color": "#c6538c"
+    },
+    {
+      "name": "Solidity",
+      "percentage": "0.55",
+      "color": "#AA6746"
     }
   ],
-  "generated": "2025-07-30T21:17:13.163Z"
+  "generated": "2025-07-30T21:58:30.901Z"
 }
