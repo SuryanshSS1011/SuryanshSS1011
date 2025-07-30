@@ -21,10 +21,6 @@
   </a>
 </p>
 
-<!-- Visitor counter -->
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=SuryanshSS1011&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
-</p>
 
 ## 👨‍💻 About Me
 
@@ -88,7 +84,7 @@
 </div>
 
 <div align="center">
-  <img height="195" src="assets/images/languages.svg" alt="Language Distribution" />
+  <img height="195" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuryanshSS1011&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true&hide=html,css" alt="Language Distribution" />
   <img height="195" src="https://github-readme-streak-stats.herokuapp.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true" alt="Streak Stats"/>
 </div>
 

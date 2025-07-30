@@ -64,17 +64,12 @@ function generateActivitySVG(weeks) {
   
   let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .month { font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: #666; }
-    .wday { font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: #666; }
-    .title { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
-    @media (prefers-color-scheme: dark) {
-      .month { fill: #8b949e; }
-      .wday { fill: #8b949e; }
-      .title { fill: #f0f6fc; }
-    }
+    .month { font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9b1d6; }
+    .wday { font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9b1d6; }
+    .title { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #7dcfff; }
   </style>
   
-  <rect width="${width}" height="${height}" fill="#fffefe"/>
+  <rect width="${width}" height="${height}" fill="#1a1b26" stroke="#414868" stroke-width="1" rx="8"/>
   
   <text x="${width/2}" y="20" text-anchor="middle" class="title">12-Week Activity Heatmap</text>
   
@@ -90,7 +85,19 @@ function generateActivitySVG(weeks) {
     week.contributionDays.forEach((day) => {
       const x = weekIndex * (cellSize + cellGap);
       const y = day.weekday * (cellSize + cellGap);
-      const color = day.contributionCount === 0 ? '#ebedf0' : day.color || '#40c463';
+      // Tokyo Night contribution colors
+      let color;
+      if (day.contributionCount === 0) {
+        color = '#24283b';
+      } else if (day.contributionCount <= 2) {
+        color = '#2d3748';
+      } else if (day.contributionCount <= 4) {
+        color = '#4a5568';
+      } else if (day.contributionCount <= 8) {
+        color = '#7dcfff';
+      } else {
+        color = '#9ece6a';
+      }
       
       svg += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" fill="${color}" rx="2">
         <title>${day.date}: ${day.contributionCount} contribution${day.contributionCount !== 1 ? 's' : ''}</title>

@@ -137,26 +137,20 @@ function generateStreakSVG(stats) {
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#fc6c0f;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ff9a56;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#f7768e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff9e64;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <style>
-    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
-    .stat-value { font: 700 28px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
-    .stat-label { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #666; }
-    .date-text { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #666; }
-    .icon { fill: #fc6c0f; }
-    @media (prefers-color-scheme: dark) {
-      .header { fill: #f0f6fc; }
-      .stat-value { fill: #f0f6fc; }
-      .stat-label { fill: #8b949e; }
-      .date-text { fill: #8b949e; }
-    }
+    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #7dcfff; }
+    .stat-value { font: 700 28px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c0caf5; }
+    .stat-label { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9b1d6; }
+    .date-text { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #9aa5ce; }
+    .icon { fill: #f7768e; }
   </style>
   
-  <rect x="0.5" y="0.5" width="${width-1}" height="${height-1}" rx="4.5" fill="#fffefe" stroke="#e4e2e2"/>
+  <rect x="0.5" y="0.5" width="${width-1}" height="${height-1}" rx="8" fill="#1a1b26" stroke="#414868" stroke-width="1"/>
   
   <g transform="translate(25, 30)">
     <!-- Header with fire icon -->
@@ -186,7 +180,7 @@ function generateStreakSVG(stats) {
     
     <!-- Streak bar visualization -->
     <g transform="translate(0, 110)">
-      <rect x="0" y="0" width="445" height="8" rx="4" fill="#ebedf0"/>
+      <rect x="0" y="0" width="445" height="8" rx="4" fill="#24283b"/>
       <rect x="0" y="0" width="${Math.min(445, (stats.currentStreak / stats.longestStreak) * 445)}" height="8" rx="4" fill="url(#gradient)"/>
     </g>
   </g>
