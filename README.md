@@ -29,7 +29,7 @@
 - 🎓 Computer Science and Physics Undergraduate at **Penn State University**
 - 🤖 Multi-domain researcher leveraging AI to build the future
 - 💻 Full-Stack Developer crafting web and mobile applications
-- 🏸 Fitness enthusiast, polyglot learner, and racket sports player
+- 🗺️ Mapping and linguistics enthusiast with a passion for racket sports
 
 ### 🎯 Current Focus
 - 🔬 AI/ML Research in Computer Vision and NLP
@@ -84,7 +84,7 @@
 </div>
 
 <div align="center">
-  <img height="195" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuryanshSS1011&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true&hide=html,css" alt="Language Distribution" />
+  <img height="240" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuryanshSS1011&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true&hide=html,css" alt="Language Distribution" />
   <img height="195" src="https://github-readme-streak-stats.herokuapp.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true" alt="Streak Stats"/>
 </div>
 
