@@ -7,6 +7,10 @@
     "update-stats": "node scripts/generate-language-stats.js && node scripts/generate-contribution-stats.js && node scripts/generate-activity-graph.js && node scripts/generate-streak-stats.js"
   },
   "dependencies": {
-    "@octokit/rest": "^19.0.0"
-  }
+    "@octokit/rest": "^19.0.13"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
