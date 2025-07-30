@@ -83,27 +83,13 @@
 
 ## 📊 GitHub Statistics
 
-### 💻 Languages I Code In
-<!-- Language distribution including private repositories -->
 <div align="center">
-  <img src="assets/images/languages.svg" alt="Language Distribution" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=SuryanshSS1011&theme=tokyo-night&hide_border=true&height=300" alt="Contribution Graph" />
 </div>
 
-### 📈 Contributions & Activity
-
-#### 🔥 Current Year Stats
 <div align="center">
-  <img height="195" src="assets/images/contribution-stats.svg" alt="Contribution Stats" />
-</div>
-
-#### 📅 Coding Consistency
-<div align="center">
-  <img height="195" src="assets/images/streak-stats.svg" alt="Streak Stats"/>
-</div>
-
-#### 🗓️ Activity Patterns
-<div align="center">
-  <img height="195" src="assets/images/activity-graph.svg" alt="Recent Activity" />
+  <img height="195" src="assets/images/languages.svg" alt="Language Distribution" />
+  <img height="195" src="https://github-readme-streak-stats.herokuapp.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true" alt="Streak Stats"/>
 </div>
 
 ## 🏆 Featured Projects

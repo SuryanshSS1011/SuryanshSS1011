@@ -1,16 +1,21 @@
 <svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #2f80ed; }
-      .lang-name { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
-      .lang-percent { font: 600 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
+      .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #70a5fd; }
+      .lang-name { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+      .lang-percent { font: 600 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+      @media (prefers-color-scheme: light) {
+        .title { fill: #2f80ed; }
+        .lang-name { fill: #333; }
+        .lang-percent { fill: #333; }
+      }
     </style>
   </defs>
   
-  <rect width="500" height="200" rx="5" fill="#fffefe"/>
+  <rect width="500" height="200" rx="5" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
   <text x="250" y="25" class="title" text-anchor="middle">Most Used Languages</text>
   
-  <g transform="translate(20, 40)"><rect y="10" width="460" height="20" fill="#ddd" rx="5"/><rect x="0" y="10" width="260.5141749171704" height="20" fill="#f1e05a" /><rect x="260.5141749171704" y="10" width="165.30148300428684" height="20" fill="#3178c6" /><rect x="425.8156579214573" y="10" width="11.24224628831651" height="20" fill="#AA6746" /><rect x="437.05790420977377" y="10" width="10.068294419886891" height="20" fill="#e34c26" /><rect x="447.1261986296607" y="10" width="6.0054023528888125" height="20" fill="#3572A5" /><rect x="453.1316009825495" y="10" width="5.952936660055136" height="20" fill="#663399" /><rect x="459.08453764260463" y="10" width="0.9154623573954094" height="20" fill="#89e051" />
+  <g transform="translate(20, 40)"><rect y="10" width="460" height="20" fill="#21262d" rx="5"/><rect x="0" y="10" width="260.5141749171704" height="20" fill="#f1e05a" /><rect x="260.5141749171704" y="10" width="165.30148300428684" height="20" fill="#3178c6" /><rect x="425.8156579214573" y="10" width="11.24224628831651" height="20" fill="#AA6746" /><rect x="437.05790420977377" y="10" width="10.068294419886891" height="20" fill="#e34c26" /><rect x="447.1261986296607" y="10" width="6.0054023528888125" height="20" fill="#3572A5" /><rect x="453.1316009825495" y="10" width="5.952936660055136" height="20" fill="#663399" /><rect x="459.08453764260463" y="10" width="0.9154623573954094" height="20" fill="#89e051" />
     <g transform="translate(0, 50)">
       <circle cx="5" cy="5" r="5" fill="#f1e05a"/>
       <text x="20" y="9" class="lang-name">JavaScript</text>

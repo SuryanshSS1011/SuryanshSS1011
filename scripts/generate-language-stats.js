@@ -12,7 +12,7 @@ async function getLanguageStats() {
   const query = `
     query($username: String!) {
       user(login: $username) {
-        repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+        repositories(first: 100, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], isFork: false) {
           nodes {
             name
             isPrivate
@@ -96,13 +96,13 @@ function generateLanguageSVG(languages, totalSize) {
   let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #2f80ed; }
-      .lang-name { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
-      .lang-percent { font: 600 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
+      .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #7dcfff; }
+      .lang-name { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9b1d6; }
+      .lang-percent { font: 600 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c0caf5; }
     </style>
   </defs>
   
-  <rect width="${width}" height="${height}" rx="5" fill="#fffefe"/>
+  <rect width="${width}" height="${height}" rx="8" fill="#1a1b26" stroke="#414868" stroke-width="1"/>
   <text x="${width/2}" y="25" class="title" text-anchor="middle">Most Used Languages</text>
   
   <g transform="translate(${margin.left}, ${margin.top})">`;
@@ -112,14 +112,18 @@ function generateLanguageSVG(languages, totalSize) {
   let currentX = 0;
   
   // Progress bar background
-  svg += `<rect y="10" width="${barWidth}" height="${barHeight}" fill="#ddd" rx="5"/>`;
+  svg += `<rect y="10" width="${barWidth}" height="${barHeight}" fill="#24283b" stroke="#414868" stroke-width="1" rx="10"/>`;
   
   // Language segments
   languages.forEach(([name, data]) => {
     const percentage = (data.size / totalSize) * 100;
     const segmentWidth = (percentage / 100) * barWidth;
     
-    svg += `<rect x="${currentX}" y="10" width="${segmentWidth}" height="${barHeight}" fill="${data.color}" />`;
+    const firstSegment = currentX === 0 ? 'rx="10" style="border-top-right-radius: 0; border-bottom-right-radius: 0;"' : '';
+    const lastSegment = currentX + segmentWidth >= barWidth - 1 ? 'rx="10" style="border-top-left-radius: 0; border-bottom-left-radius: 0;"' : '';
+    const borderRadius = firstSegment || lastSegment || '';
+    
+    svg += `<rect x="${currentX}" y="10" width="${segmentWidth}" height="${barHeight}" fill="${data.color}" ${borderRadius}/>`;
     currentX += segmentWidth;
   });
   
