@@ -38,7 +38,7 @@
     
     <!-- Total Contributions -->
     <g transform="translate(320, 40)">
-      <text x="0" y="0" class="stat-value">501</text>
+      <text x="0" y="0" class="stat-value">503</text>
       <text x="0" y="25" class="stat-label">Total (This Year)</text>
     </g>
     
