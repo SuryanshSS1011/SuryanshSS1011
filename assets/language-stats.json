@@ -1,0 +1,40 @@
+{
+  "languages": [
+    {
+      "name": "JavaScript",
+      "percentage": "56.63",
+      "color": "#f1e05a"
+    },
+    {
+      "name": "TypeScript",
+      "percentage": "35.94",
+      "color": "#3178c6"
+    },
+    {
+      "name": "Solidity",
+      "percentage": "2.44",
+      "color": "#AA6746"
+    },
+    {
+      "name": "HTML",
+      "percentage": "2.19",
+      "color": "#e34c26"
+    },
+    {
+      "name": "Python",
+      "percentage": "1.31",
+      "color": "#3572A5"
+    },
+    {
+      "name": "CSS",
+      "percentage": "1.29",
+      "color": "#663399"
+    },
+    {
+      "name": "Shell",
+      "percentage": "0.20",
+      "color": "#89e051"
+    }
+  ],
+  "generated": "2025-07-30T21:17:13.163Z"
+}
