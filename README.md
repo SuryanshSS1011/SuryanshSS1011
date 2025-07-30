@@ -1,6 +1,11 @@
 <!-- Animated header -->
 <p align="center">
-  <img src="assets/images/animated-header.svg" alt="Header" />
+  <img src="assets/images/animated-header.svg" alt="Animated Header" />
+</p>
+
+<!-- Typing animation -->
+<p align="center">
+  <img src="assets/images/typing.svg" alt="Typing Animation" />
 </p>
 
 <!-- Profile badges -->
@@ -98,16 +103,16 @@
 
 #### 🗓️ Activity Patterns
 <div align="center">
-  <img src="assets/images/activity-graph.svg" alt="Recent Activity" />
+  <img height="195" src="assets/images/activity-graph.svg" alt="Recent Activity" />
 </div>
 
 ## 🏆 Featured Projects
 <div align="center">
-  <a href="https://github.com/SuryanshSS1011/project-name">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=project-name&theme=tokyonight" />
+  <a href="https://github.com/SuryanshSS1011/Performance-Bugs-LLM">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=Performance-Bugs-LLM&theme=tokyonight" alt="Performance-Bugs-LLM" />
   </a>
-  <a href="https://github.com/SuryanshSS1011/another-project">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=another-project&theme=tokyonight" />
+  <a href="https://github.com/SuryanshSS1011/VeriChain">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=VeriChain&theme=tokyonight" alt="VeriChain" />
   </a>
 </div>
 
