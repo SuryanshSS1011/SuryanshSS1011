@@ -1,0 +1,6 @@
+<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.5" y="0.5" width="494" height="194" rx="4.5" fill="#fffefe" stroke="#e4e2e2"/>
+  <text x="247" y="100" text-anchor="middle" font-family="Segoe UI, Ubuntu, Sans-Serif" font-size="14" fill="#666">
+    Contribution stats will be generated after first workflow run
+  </text>
+</svg>
