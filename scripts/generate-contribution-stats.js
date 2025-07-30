@@ -87,18 +87,13 @@ function generateContributionSVG(stats) {
   
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
-    .stat { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
-    .statlabel { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #666; }
-    .icon { fill: #586069; }
-    @media (prefers-color-scheme: dark) {
-      .stat { fill: #f0f6fc; }
-      .statlabel { fill: #8b949e; }
-      .icon { fill: #8b949e; }
-    }
+    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #7dcfff; }
+    .stat { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c0caf5; }
+    .statlabel { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9b1d6; }
+    .icon { fill: #7aa2f7; }
   </style>
   
-  <rect x="0.5" y="0.5" width="${width-1}" height="${height-1}" rx="4.5" fill="#fffefe" stroke="#e4e2e2"/>
+  <rect x="0.5" y="0.5" width="${width-1}" height="${height-1}" rx="8" fill="#1a1b26" stroke="#414868" stroke-width="1"/>
   
   <g transform="translate(25, 25)">
     <text x="0" y="0" class="header">${stats.currentYear} GitHub Activity</text>
