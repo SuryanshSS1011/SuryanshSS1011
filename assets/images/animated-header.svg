@@ -1,66 +1,70 @@
-<svg fill="none" viewBox="0 0 800 200" width="800" height="200" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <style>
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        
-        @keyframes wave {
-          0%, 100% { transform: rotate(0deg); }
-          50% { transform: rotate(20deg); }
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        .container {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin: 0;
-          width: 100%;
-          height: 200px;
-          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-          background-size: 400% 400%;
-          animation: gradient 15s ease infinite;
-          color: white;
-          text-align: center;
-        }
-        
-        h1 {
-          font-size: 50px;
-          font-weight: 800;
-          margin: 0;
-          letter-spacing: -2px;
-          animation: float 3s ease-in-out infinite;
-        }
-        
-        .subtitle {
-          font-size: 20px;
-          font-weight: 400;
-          opacity: 0.9;
-          margin-top: 10px;
-        }
-        
-        .wave {
-          display: inline-block;
-          animation: wave 2.5s ease-in-out infinite;
-          transform-origin: 70% 70%;
-          font-size: 45px;
-        }
-      </style>
-      
-      <div class="container">
-        <h1>Hi, I'm Suryansh <span class="wave">👋</span></h1>
-        <div class="subtitle">Building the future with AI & Code</div>
-      </div>
-    </div>
-  </foreignObject>
+<svg width="800" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1">
+        <animate attributeName="stop-color" 
+          values="#667eea;#764ba2;#f093fb;#667eea" 
+          dur="4s" 
+          repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1">
+        <animate attributeName="stop-color" 
+          values="#764ba2;#f093fb;#667eea;#764ba2" 
+          dur="4s" 
+          repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1">
+        <animate attributeName="stop-color" 
+          values="#f093fb;#667eea;#764ba2;#f093fb" 
+          dur="4s" 
+          repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <style>
+      .bouncing-text { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+        font-size: 32px; 
+        font-weight: bold; 
+        fill: white;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="800" height="120" fill="url(#gradient)"/>
+  
+  <!-- Centered bouncing text -->
+  <g>
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="0,-6; 0,6; 0,-6" 
+      dur="3s" 
+      repeatCount="indefinite"/>
+    
+    <text x="400" y="70" class="bouncing-text">Building the future with AI &amp; Code</text>
+  </g>
+  
+  <!-- Decorative floating particles -->
+  <circle cx="120" cy="40" r="3" fill="rgba(255,255,255,0.4)">
+    <animate attributeName="cy" values="40;25;40" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="680" cy="80" r="2.5" fill="rgba(255,255,255,0.3)">
+    <animate attributeName="cy" values="80;95;80" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="180" cy="100" r="2" fill="rgba(255,255,255,0.5)">
+    <animate attributeName="cy" values="100;85;100" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="620" cy="30" r="2.5" fill="rgba(255,255,255,0.3)">
+    <animate attributeName="cy" values="30;15;30" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
 </svg>

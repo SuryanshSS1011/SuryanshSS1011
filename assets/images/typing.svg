@@ -1,27 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="100" viewBox="0 0 600 100">
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="100" viewBox="0 0 700 100">
   <style>
-    .text { fill: #333; font-family: 'Courier New', monospace; font-size: 24px; }
-    .cursor { animation: blink 1s infinite; }
-    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+    .text { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      font-size: 32px; 
+      font-weight: 600;
+    }
+    .cursor { 
+      animation: professional-blink 1.2s ease-in-out infinite;
+    }
+    @keyframes professional-blink { 
+      0%, 45% { 
+        opacity: 1; 
+        transform: scaleY(1);
+      } 
+      50%, 95% { 
+        opacity: 0; 
+        transform: scaleY(0.95);
+      }
+      100% { 
+        opacity: 1; 
+        transform: scaleY(1);
+      } 
+    }
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
     }
     .text-mask {
-      animation: typing 4s steps(40, end) infinite;
+      animation: typing 4s steps(40, end) forwards;
+    }
+    .static-cursor {
+      animation: professional-blink 1.2s ease-in-out infinite;
+      transform-origin: center bottom;
     }
   </style>
   <defs>
     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1">
+        <animate attributeName="stop-color" 
+          values="#667eea;#764ba2;#f093fb;#667eea" 
+          dur="6s" 
+          repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1">
+        <animate attributeName="stop-color" 
+          values="#764ba2;#f093fb;#667eea;#764ba2" 
+          dur="6s" 
+          repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1">
+        <animate attributeName="stop-color" 
+          values="#f093fb;#667eea;#764ba2;#f093fb" 
+          dur="6s" 
+          repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
     <mask id="text-mask">
-      <rect class="text-mask" x="0" y="0" width="600" height="100" fill="white"/>
+      <rect class="text-mask" x="0" y="0" width="700" height="100" fill="white"/>
     </mask>
   </defs>
-  <text x="20" y="50" class="text" fill="url(#grad)" mask="url(#text-mask)">
-    Hello, I'm Suryansh! Welcome to my profile
+  
+  <!-- Background with subtle gradient -->
+  <rect width="700" height="100" fill="url(#background-grad)" opacity="0.1"/>
+  <defs>
+    <linearGradient id="background-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Animated text with gradient -->
+  <text x="20" y="55" class="text" fill="url(#grad)" mask="url(#text-mask)">
+    Hi, I'm Suryansh! Welcome to my profile
   </text>
-  <rect class="cursor" x="20" y="30" width="3" height="24" fill="#667eea"/>
+  
+  <!-- Professional blinking cursor with shadow -->
+  <defs>
+    <filter id="cursor-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+      <feOffset dx="0.5" dy="0.5" result="offset"/>
+      <feFlood flood-color="#000000" flood-opacity="0.2"/>
+      <feComposite in2="offset" operator="in"/>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  <rect class="static-cursor" x="670" y="32" width="3" height="28" fill="url(#grad)" filter="url(#cursor-shadow)" rx="1.5"/>
 </svg>
