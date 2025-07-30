@@ -1,0 +1,6 @@
+<svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="200" rx="5" fill="#fffefe"/>
+  <text x="250" y="100" text-anchor="middle" font-family="Segoe UI, Ubuntu, Sans-Serif" font-size="14" fill="#666">
+    Language stats will be generated after first workflow run
+  </text>
+</svg>

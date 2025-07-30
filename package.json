@@ -1,0 +1,12 @@
+{
+  "name": "suryanshss1011-profile",
+  "version": "1.0.0",
+  "description": "GitHub profile statistics generator",
+  "private": true,
+  "scripts": {
+    "update-stats": "node scripts/generate-language-stats.js && node scripts/generate-contribution-stats.js && node scripts/generate-activity-graph.js && node scripts/generate-streak-stats.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^19.0.0"
+  }
+}
