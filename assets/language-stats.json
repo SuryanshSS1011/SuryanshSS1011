@@ -2,44 +2,44 @@
   "languages": [
     {
       "name": "JavaScript",
-      "percentage": "64.69",
+      "percentage": "63.48",
       "color": "#f1e05a"
     },
     {
       "name": "TypeScript",
-      "percentage": "19.59",
+      "percentage": "20.91",
       "color": "#3178c6"
     },
     {
       "name": "CSS",
-      "percentage": "5.91",
+      "percentage": "5.98",
       "color": "#663399"
     },
     {
       "name": "HTML",
-      "percentage": "3.35",
+      "percentage": "3.28",
       "color": "#e34c26"
     },
     {
       "name": "Kotlin",
-      "percentage": "3.19",
+      "percentage": "3.13",
       "color": "#A97BFF"
     },
     {
       "name": "Swift",
-      "percentage": "1.47",
+      "percentage": "1.45",
       "color": "#F05138"
     },
     {
       "name": "SCSS",
-      "percentage": "0.85",
+      "percentage": "0.84",
       "color": "#c6538c"
     },
     {
       "name": "Solidity",
-      "percentage": "0.55",
+      "percentage": "0.54",
       "color": "#AA6746"
     }
   ],
-  "generated": "2025-07-31T01:20:03.681Z"
+  "generated": "2025-08-01T01:27:52.290Z"
 }

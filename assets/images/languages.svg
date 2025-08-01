@@ -10,21 +10,21 @@
   <rect width="500" height="200" rx="8" fill="#1a1b26" stroke="#414868" stroke-width="1"/>
   <text x="250" y="25" class="title" text-anchor="middle">Most Used Languages</text>
   
-  <g transform="translate(20, 40)"><rect y="10" width="460" height="20" fill="#24283b" stroke="#414868" stroke-width="1" rx="10"/><rect x="0" y="10" width="297.5823743562478" height="20" fill="#f1e05a" rx="10" style="border-top-right-radius: 0; border-bottom-right-radius: 0;"/><rect x="297.5823743562478" y="10" width="90.1274977711163" height="20" fill="#3178c6" /><rect x="387.70987212736406" y="10" width="27.174187808521555" height="20" fill="#663399" /><rect x="414.8840599358856" y="10" width="15.388580493159655" height="20" fill="#e34c26" /><rect x="430.2726404290453" y="10" width="14.678136696953661" height="20" fill="#A97BFF" /><rect x="444.95077712599897" y="10" width="6.775426611778127" height="20" fill="#F05138" /><rect x="451.7262037377771" y="10" width="3.9307774633772694" height="20" fill="#c6538c" /><rect x="455.6569812011544" y="10" width="2.5248919608366234" height="20" fill="#AA6746" />
+  <g transform="translate(20, 40)"><rect y="10" width="460" height="20" fill="#24283b" stroke="#414868" stroke-width="1" rx="10"/><rect x="0" y="10" width="292.01688922140596" height="20" fill="#f1e05a" rx="10" style="border-top-right-radius: 0; border-bottom-right-radius: 0;"/><rect x="292.01688922140596" y="10" width="96.19409142087436" height="20" fill="#3178c6" /><rect x="388.21098064228033" y="10" width="27.519896772560866" height="20" fill="#663399" /><rect x="415.7308774148412" y="10" width="15.099739810256805" height="20" fill="#e34c26" /><rect x="430.83061722509797" y="10" width="14.402630906853398" height="20" fill="#A97BFF" /><rect x="445.23324813195137" y="10" width="6.648253163234641" height="20" fill="#F05138" /><rect x="451.881501295186" y="10" width="3.8569975297852332" height="20" fill="#c6538c" /><rect x="455.73849882497126" y="10" width="2.4775002265211588" height="20" fill="#AA6746" />
     <g transform="translate(0, 50)">
       <circle cx="5" cy="5" r="5" fill="#f1e05a"/>
       <text x="20" y="9" class="lang-name">JavaScript</text>
-      <text x="455" y="9" class="lang-percent" text-anchor="end">64.7%</text>
+      <text x="455" y="9" class="lang-percent" text-anchor="end">63.5%</text>
     </g>
     <g transform="translate(0, 70)">
       <circle cx="5" cy="5" r="5" fill="#3178c6"/>
       <text x="20" y="9" class="lang-name">TypeScript</text>
-      <text x="455" y="9" class="lang-percent" text-anchor="end">19.6%</text>
+      <text x="455" y="9" class="lang-percent" text-anchor="end">20.9%</text>
     </g>
     <g transform="translate(0, 90)">
       <circle cx="5" cy="5" r="5" fill="#663399"/>
       <text x="20" y="9" class="lang-name">CSS</text>
-      <text x="455" y="9" class="lang-percent" text-anchor="end">5.9%</text>
+      <text x="455" y="9" class="lang-percent" text-anchor="end">6.0%</text>
     </g>
     <g transform="translate(0, 110)">
       <circle cx="5" cy="5" r="5" fill="#e34c26"/>
@@ -34,17 +34,17 @@
     <g transform="translate(0, 130)">
       <circle cx="5" cy="5" r="5" fill="#A97BFF"/>
       <text x="20" y="9" class="lang-name">Kotlin</text>
-      <text x="455" y="9" class="lang-percent" text-anchor="end">3.2%</text>
+      <text x="455" y="9" class="lang-percent" text-anchor="end">3.1%</text>
     </g>
     <g transform="translate(0, 150)">
       <circle cx="5" cy="5" r="5" fill="#F05138"/>
       <text x="20" y="9" class="lang-name">Swift</text>
-      <text x="455" y="9" class="lang-percent" text-anchor="end">1.5%</text>
+      <text x="455" y="9" class="lang-percent" text-anchor="end">1.4%</text>
     </g>
     <g transform="translate(0, 170)">
       <circle cx="5" cy="5" r="5" fill="#c6538c"/>
       <text x="20" y="9" class="lang-name">SCSS</text>
-      <text x="455" y="9" class="lang-percent" text-anchor="end">0.9%</text>
+      <text x="455" y="9" class="lang-percent" text-anchor="end">0.8%</text>
     </g>
     <g transform="translate(0, 190)">
       <circle cx="5" cy="5" r="5" fill="#AA6746"/>
