@@ -27,7 +27,7 @@
     <g transform="translate(0, 40)">
       <text x="0" y="0" class="stat-value">1</text>
       <text x="0" y="25" class="stat-label">Current Streak</text>
-      <text x="0" y="42" class="date-text">Last contribution: Jul 31, 2025</text>
+      <text x="0" y="42" class="date-text">Last contribution: Aug 1, 2025</text>
     </g>
     
     <!-- Longest Streak -->
@@ -38,7 +38,7 @@
     
     <!-- Total Contributions -->
     <g transform="translate(320, 40)">
-      <text x="0" y="0" class="stat-value">503</text>
+      <text x="0" y="0" class="stat-value">509</text>
       <text x="0" y="25" class="stat-label">Total (This Year)</text>
     </g>
     
