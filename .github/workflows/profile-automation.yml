@@ -24,18 +24,10 @@ jobs:
         with:
           node-version: '20'
       
-      # Cache for Python dependencies (if needed)
-      - name: Setup Python with cache
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-          cache: 'pip'
-      
-      # Install dependencies once
+      # Install dependencies
       - name: Install dependencies
         run: |
           npm ci --prefer-offline --no-audit
-          pip install requests beautifulsoup4 PyGithub pytz
       
       # Parallel execution of profile updates
       - name: Update Profile Content
@@ -80,8 +72,13 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { data: user } = await github.rest.users.getAuthenticated();
-            const { data: repos } = await github.rest.repos.listForAuthenticatedUser();
+            const { data: user } = await github.rest.users.getByUsername({
+              username: context.repo.owner
+            });
+            const { data: repos } = await github.rest.repos.listForUser({
+              username: context.repo.owner,
+              per_page: 100
+            });
             
             // Check various milestones
             const milestones = [];
@@ -120,7 +117,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const { data: events } = await github.rest.activity.listEventsForAuthenticatedUser({
+            const { data: events } = await github.rest.activity.listPublicEventsForUser({
               username: context.repo.owner,
               per_page: 100
             });
