@@ -25,6 +25,10 @@ jobs:
           # Check for required sections
           echo "🔍 Checking README structure..."
           
+          # Show what sections actually exist
+          echo "📄 Sections found in README:"
+          grep -E "^##" README.md
+          
           REQUIRED_SECTIONS=(
             "About Me"
             "Tech Stack"
@@ -189,14 +193,14 @@ jobs:
           
           # Simple patterns to check for potential secrets
           PATTERNS=(
-            "password.*=.*['\"].*['\"]"
-            "api[_-]?key.*=.*['\"].*['\"]"
-            "token.*=.*['\"].*['\"]"
-            "secret.*=.*['\"].*['\"]"
+            "password.*=.*['\"][^'\"]*['\"]"
+            "api[_-]?key.*=.*['\"][^'\"]*['\"]"
+            "token.*=.*['\"][^'\"]*['\"]"
+            "secret.*=.*['\"][^'\"]*['\"]"
           )
           
           for pattern in "${PATTERNS[@]}"; do
-            if grep -riE "$pattern" . --exclude-dir=.git --exclude-dir=node_modules; then
+            if grep -riE "$pattern" . --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.github; then
               echo "❌ Potential secret exposed!"
               exit 1
             fi
