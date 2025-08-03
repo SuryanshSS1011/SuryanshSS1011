@@ -25,9 +25,9 @@
     
     <!-- Current Streak -->
     <g transform="translate(0, 40)">
-      <text x="0" y="0" class="stat-value">1</text>
+      <text x="0" y="0" class="stat-value">0</text>
       <text x="0" y="25" class="stat-label">Current Streak</text>
-      <text x="0" y="42" class="date-text">Last contribution: Jul 30, 2025</text>
+      <text x="0" y="42" class="date-text">Last contribution: Aug 1, 2025</text>
     </g>
     
     <!-- Longest Streak -->
@@ -38,14 +38,14 @@
     
     <!-- Total Contributions -->
     <g transform="translate(320, 40)">
-      <text x="0" y="0" class="stat-value">501</text>
+      <text x="0" y="0" class="stat-value">509</text>
       <text x="0" y="25" class="stat-label">Total (This Year)</text>
     </g>
     
     <!-- Streak bar visualization -->
     <g transform="translate(0, 110)">
       <rect x="0" y="0" width="445" height="8" rx="4" fill="#24283b"/>
-      <rect x="0" y="0" width="55.625" height="8" rx="4" fill="url(#gradient)"/>
+      <rect x="0" y="0" width="0" height="8" rx="4" fill="url(#gradient)"/>
     </g>
   </g>
 </svg>
