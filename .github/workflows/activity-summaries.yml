@@ -1,0 +1,280 @@
+name: Activity Summaries
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'    # Weekly: Sundays at midnight
+    - cron: '0 0 1 * *'    # Monthly: First day of month
+  workflow_dispatch:
+    inputs:
+      period:
+        description: 'Summary period'
+        required: true
+        default: 'weekly'
+        type: choice
+        options:
+          - weekly
+          - monthly
+          - yearly
+
+jobs:
+  generate-summary:
+    runs-on: ubuntu-latest
+    env:
+      TZ: 'America/New_York'  # Eastern Time
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Determine summary period
+        id: period
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "period=${{ github.event.inputs.period }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.event.schedule }}" == "0 0 * * 0" ]]; then
+            echo "period=weekly" >> $GITHUB_OUTPUT
+          else
+            echo "period=monthly" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Generate activity summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const period = '${{ steps.period.outputs.period }}';
+            
+            // Calculate date range in Eastern Time
+            const endDate = new Date();
+            const startDate = new Date();
+            
+            // Convert to Eastern Time for display
+            const etOptions = { timeZone: 'America/New_York', dateStyle: 'short', timeStyle: 'short' };
+            
+            switch(period) {
+              case 'weekly':
+                startDate.setDate(endDate.getDate() - 7);
+                break;
+              case 'monthly':
+                startDate.setMonth(endDate.getMonth() - 1);
+                break;
+              case 'yearly':
+                startDate.setFullYear(endDate.getFullYear() - 1);
+                break;
+            }
+            
+            // Fetch activity data
+            const { data: events } = await github.rest.activity.listEventsForAuthenticatedUser({
+              username: context.repo.owner,
+              per_page: 100
+            });
+            
+            // Filter events by date range
+            const filteredEvents = events.filter(event => {
+              const eventDate = new Date(event.created_at);
+              return eventDate >= startDate && eventDate <= endDate;
+            });
+            
+            // Analyze activity
+            const stats = {
+              commits: 0,
+              prs: 0,
+              issues: 0,
+              reviews: 0,
+              stars: 0,
+              repos: new Set(),
+              languages: {},
+              collaborators: new Set(),
+              mostActiveDay: {},
+              mostActiveHour: {}
+            };
+            
+            // Process events
+            filteredEvents.forEach(event => {
+              stats.repos.add(event.repo.name);
+              
+              // Track activity by day and hour
+              const eventDate = new Date(event.created_at);
+              const day = eventDate.toLocaleDateString('en-US', { weekday: 'long' });
+              const hour = eventDate.getHours();
+              
+              stats.mostActiveDay[day] = (stats.mostActiveDay[day] || 0) + 1;
+              stats.mostActiveHour[hour] = (stats.mostActiveHour[hour] || 0) + 1;
+              
+              switch(event.type) {
+                case 'PushEvent':
+                  stats.commits += event.payload.commits?.length || 0;
+                  break;
+                case 'PullRequestEvent':
+                  stats.prs++;
+                  break;
+                case 'IssuesEvent':
+                  stats.issues++;
+                  break;
+                case 'PullRequestReviewEvent':
+                  stats.reviews++;
+                  break;
+                case 'WatchEvent':
+                  stats.stars++;
+                  break;
+              }
+            });
+            
+            // Get language stats for active repos
+            for (const repoName of stats.repos) {
+              try {
+                const [owner, repo] = repoName.split('/');
+                const { data: languages } = await github.rest.repos.listLanguages({
+                  owner,
+                  repo
+                });
+                
+                Object.entries(languages).forEach(([lang, bytes]) => {
+                  stats.languages[lang] = (stats.languages[lang] || 0) + bytes;
+                });
+              } catch (e) {
+                console.log(`Could not fetch languages for ${repoName}`);
+              }
+            }
+            
+            // Find most active day and hour
+            const mostActiveDay = Object.entries(stats.mostActiveDay)
+              .sort(([,a], [,b]) => b - a)[0];
+            const mostActiveHour = Object.entries(stats.mostActiveHour)
+              .sort(([,a], [,b]) => b - a)[0];
+            
+            // Sort languages by usage
+            const topLanguages = Object.entries(stats.languages)
+              .sort(([,a], [,b]) => b - a)
+              .slice(0, 5)
+              .map(([lang]) => lang);
+            
+            // Generate summary content
+            const summaryContent = `# 📊 ${period.charAt(0).toUpperCase() + period.slice(1)} Activity Summary
+            
+            **Period**: ${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}
+            
+            ## 📈 Activity Overview
+            
+            - 💻 **Commits**: ${stats.commits}
+            - 🔄 **Pull Requests**: ${stats.prs}
+            - 📝 **Issues**: ${stats.issues}
+            - 👀 **Reviews**: ${stats.reviews}
+            - ⭐ **Stars Given**: ${stats.stars}
+            - 📦 **Active Repositories**: ${stats.repos.size}
+            
+            ## 🏆 Highlights
+            
+            - 🗓️ **Most Active Day**: ${mostActiveDay ? mostActiveDay[0] : 'N/A'} (${mostActiveDay ? mostActiveDay[1] : 0} activities)
+            - 🕐 **Most Active Hour**: ${mostActiveHour ? mostActiveHour[0] : 'N/A'}:00 (${mostActiveHour ? mostActiveHour[1] : 0} activities)
+            - 🔤 **Top Languages**: ${topLanguages.join(', ')}
+            
+            ## 📊 Activity Distribution
+            
+            \`\`\`
+            Commits:      ${'█'.repeat(Math.min(stats.commits, 50))} ${stats.commits}
+            Pull Requests: ${'█'.repeat(Math.min(stats.prs * 5, 50))} ${stats.prs}
+            Issues:       ${'█'.repeat(Math.min(stats.issues * 5, 50))} ${stats.issues}
+            Reviews:      ${'█'.repeat(Math.min(stats.reviews * 5, 50))} ${stats.reviews}
+            \`\`\`
+            
+            ## 🎯 Goals for Next ${period}
+            
+            - [ ] Maintain or increase commit frequency
+            - [ ] Contribute to open source projects
+            - [ ] Review more pull requests
+            - [ ] Explore new technologies
+            
+            ---
+            
+            *Generated on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}*
+            `;
+            
+            // Save summary
+            const summaryDir = `summaries/${new Date().getFullYear()}`;
+            if (!fs.existsSync(summaryDir)) {
+              fs.mkdirSync(summaryDir, { recursive: true });
+            }
+            
+            const filename = `${period}-${startDate.toISOString().split('T')[0]}.md`;
+            fs.writeFileSync(`${summaryDir}/${filename}`, summaryContent);
+            
+            // Update README with latest summary link
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+            
+            const summaryLink = `[Latest ${period} Summary](${summaryDir}/${filename})`;
+            
+            // Update or add summary section
+            const summarySection = `<!-- Summaries Start -->\n📊 ${summaryLink}\n<!-- Summaries End -->`;
+            
+            if (readme.includes('<!-- Summaries Start -->')) {
+              readme = readme.replace(
+                /<!-- Summaries Start -->[\s\S]*?<!-- Summaries End -->/,
+                summarySection
+              );
+            } else {
+              // Add before the last update timestamp
+              readme = readme.replace(
+                /(Last updated: .*)/,
+                `${summarySection}\n\n$1`
+              );
+            }
+            
+            fs.writeFileSync(readmePath, readme);
+            
+            // Create a summary issue if it's a monthly summary
+            if (period === 'monthly') {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `📊 Monthly Activity Summary - ${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
+                body: summaryContent,
+                labels: ['summary', 'monthly-report']
+              });
+            }
+            
+            console.log(`${period} summary generated successfully!`);
+      
+      - name: Commit summary
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || git commit -m "📊 Add ${{ steps.period.outputs.period }} activity summary [skip ci]"
+          git push
+
+  generate-insights:
+    needs: generate-summary
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 0 1 * *' || github.event.inputs.period == 'monthly'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate insights and recommendations
+        run: |
+          # Create insights based on activity patterns
+          cat > insights.md << 'EOF'
+          # 🔍 Activity Insights & Recommendations
+          
+          Based on your recent activity patterns:
+          
+          ## 💡 Recommendations
+          1. **Code Quality**: Consider adding automated testing to your most active repositories
+          2. **Collaboration**: Engage more with the community through code reviews
+          3. **Learning**: Explore trending technologies in your language ecosystem
+          4. **Consistency**: Maintain your contribution streak with small daily commits
+          
+          ## 🎯 Suggested Actions
+          - Set up GitHub Actions in repos without CI/CD
+          - Create issues for feature ideas
+          - Contribute to open source projects you use
+          - Document your projects better
+          EOF
+          
+          # This could be enhanced with actual data analysis
