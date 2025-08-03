@@ -68,8 +68,8 @@ jobs:
                 break;
             }
             
-            // Fetch activity data
-            const { data: events } = await github.rest.activity.listEventsForAuthenticatedUser({
+            // Fetch activity data (using public events)
+            const { data: events } = await github.rest.activity.listPublicEventsForUser({
               username: context.repo.owner,
               per_page: 100
             });

@@ -35,7 +35,7 @@ jobs:
           MISSING_SECTIONS=()
           
           for section in "${REQUIRED_SECTIONS[@]}"; do
-            if ! grep -q "## $section\|### $section" README.md; then
+            if ! grep -qE "##.*$section" README.md; then
               MISSING_SECTIONS+=("$section")
             fi
           done
@@ -183,6 +183,7 @@ jobs:
           VALIDATE_JSON: true
           VALIDATE_YAML: true
           VALIDATE_MARKDOWN: true
+          MARKDOWNLINT_CONFIG_FILE: .markdownlint.json
       
       - name: Check for secrets
         run: |

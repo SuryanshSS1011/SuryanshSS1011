@@ -80,7 +80,7 @@
 ## 📊 GitHub Statistics
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=SuryanshSS1011&theme=tokyo-night&hide_border=true&height=300&custom_title=Contribution%20Graph%20(ET)&timezone=America/New_York" alt="Contribution Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=SuryanshSS1011&theme=tokyo-night&hide_border=true&height=300&timezone=America/New_York" alt="Contribution Graph" />
 </div>
 
 <div align="center">
