@@ -1,16 +1,20 @@
 {
-  "name": "suryanshss1011-profile",
+  "name": "github-profile-automation",
   "version": "1.0.0",
-  "description": "GitHub profile statistics generator",
+  "description": "Automated GitHub profile management with CI/CD",
   "private": true,
   "scripts": {
-    "update-stats": "node scripts/generate-language-stats.js && node scripts/generate-contribution-stats.js && node scripts/generate-activity-graph.js && node scripts/generate-streak-stats.js"
+    "test": "jest",
+    "lint": "markdownlint README.md",
+    "update-readme": "node .github/scripts/readme-updater.js",
+    "generate-badges": "node .github/scripts/badge-generator.js"
   },
-  "dependencies": {
-    "@octokit/rest": "^19.0.13"
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "markdownlint-cli": "^0.37.0"
   },
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }

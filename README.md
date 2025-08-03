@@ -85,7 +85,7 @@
 
 <div align="center">
   <img height="240" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuryanshSS1011&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true&hide=html,css" alt="Language Distribution" />
-  <img height="195" src="https://github-readme-streak-stats.herokuapp.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true" alt="Streak Stats"/>
+  <img height="195" src="https://github-readme-streak-stats.herokuapp.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&timezone=America/New_York" alt="Streak Stats"/>
 </div>
 
 ## 🏆 Featured Projects
