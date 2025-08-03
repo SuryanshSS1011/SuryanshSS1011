@@ -69,31 +69,7 @@ jobs:
       - name: Generate custom badges
         run: |
           mkdir -p .github/badges
-          
-          # Create badge generation script
-          cat > .github/scripts/generate-badges.js << 'EOF'
-const https = require('https');
-const fs = require('fs');
-
-// Calculate metrics
-const generateBadge = (label, message, color) => {
-  const url = `https://img.shields.io/badge/${encodeURIComponent(label)}-${encodeURIComponent(message)}-${color}`;
-  return url;
-};
-
-// Generate various badges
-const badges = [
-  { label: 'Profile Views', message: '1.2k', color: 'blue' },
-  { label: 'Repos', message: '42', color: 'green' },
-  { label: 'Contributions', message: '1,337', color: 'yellow' },
-];
-
-// Save badge URLs
-const badgeUrls = badges.map(b => generateBadge(b.label, b.message, b.color));
-fs.writeFileSync('.github/badges/urls.json', JSON.stringify(badgeUrls));
-EOF
-
-          node .github/scripts/generate-badges.js
+          node .github/scripts/badge-generator.js
 
   # Milestone celebrations
   celebrate-milestones:
