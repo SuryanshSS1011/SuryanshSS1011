@@ -27,7 +27,7 @@ jobs:
             const fs = require('fs');
             
             // Fetch user stats
-            const { data: user } = await github.rest.users.get({
+            const { data: user } = await github.rest.users.getByUsername({
               username: context.repo.owner
             });
             
