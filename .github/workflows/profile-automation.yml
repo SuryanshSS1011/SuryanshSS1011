@@ -45,67 +45,11 @@ jobs:
           # Create automation scripts directory
           mkdir -p .github/scripts
           
-          # Generate recent activity script
-          cat > .github/scripts/update-recent-activity.py << 'EOF'
-import os
-import json
-from github import Github
-from datetime import datetime, timedelta
-import pytz
-
-g = Github(os.environ['GITHUB_TOKEN'])
-user = g.get_user()
-
-# Get recent activity
-events = user.get_events()
-recent_activities = []
-
-# Use Eastern Time for all date operations
-et = pytz.timezone('America/New_York')
-now_et = datetime.now(et)
-
-for event in events[:10]:
-    event_time_et = event.created_at.replace(tzinfo=pytz.UTC).astimezone(et)
-    if event_time_et > now_et - timedelta(days=7):
-        activity = {
-            'type': event.type,
-            'repo': event.repo.name,
-            'time': event_time_et.isoformat(),
-            'action': event.payload.get('action', '')
-        }
-        recent_activities.append(activity)
-
-# Save to JSON for processing
-with open('recent_activity.json', 'w') as f:
-    json.dump(recent_activities, f)
-EOF
-
-          python .github/scripts/update-recent-activity.py
+          # Run the readme updater script
+          node .github/scripts/readme-updater.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # Update README with latest info
-      - name: Update README sections
-        run: |
-          node -e "
-          const fs = require('fs');
-          const activity = JSON.parse(fs.readFileSync('recent_activity.json', 'utf8'));
-          
-          // Read current README
-          let readme = fs.readFileSync('README.md', 'utf8');
-          
-          // Update recent activity section
-          const activitySection = activity.slice(0, 5).map(a => {
-            const date = new Date(a.time).toLocaleDateString();
-            return \`- 🔸 \${a.type.replace('Event', '')} in \${a.repo} (\${date})\`;
-          }).join('\\n');
-          
-          // Update timestamp
-          const timestamp = new Date().toUTCString();
-          readme = readme.replace(/Last updated: .*/g, \`Last updated: \${timestamp}\`);
-          
-          fs.writeFileSync('README.md', readme);
-          "
       
       - name: Commit changes
         run: |

@@ -19,7 +19,6 @@ jobs:
       - name: Setup validators
         run: |
           npm install -g markdownlint-cli
-          pip install markdown-link-check
       
       - name: Validate README structure
         run: |

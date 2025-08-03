@@ -10,7 +10,7 @@ This guide documents all CI/CD workflows and automation scripts in this reposito
 
 ## 📁 Project Structure
 
-```
+```bash
 .github/
 ├── workflows/
 │   ├── profile-automation.yml      # Main automation workflow
@@ -78,7 +78,7 @@ summaries/                         # Activity reports (auto-created)
 
 ### 3. Activity Summaries (`activity-summaries.yml`)
 
-**Schedule**: 
+**Schedule**:
 - Weekly: Sundays at midnight
 - Monthly: First day of month at midnight
 - Manual trigger with period selection
@@ -181,7 +181,7 @@ All workflows use:
 
 ### Python Dependencies
 
-```
+```text
 requests
 beautifulsoup4
 PyGithub
