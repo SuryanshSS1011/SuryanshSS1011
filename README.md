@@ -103,8 +103,8 @@
   <a href="https://github.com/SuryanshSS1011/Performance-Bugs-LLM">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=Performance-Bugs-LLM&theme=tokyonight" alt="Performance-Bugs-LLM" />
   </a>
-  <a href="https://github.com/SuryanshSS1011/VeriChain">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=VeriChain&theme=tokyonight" alt="VeriChain" />
+  <a href="https://github.com/CollegeNotesOrg/noteparser">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=CollegeNotesOrg&repo=noteparser&theme=tokyonight" alt="noteparser" />
   </a>
 </div>
 
