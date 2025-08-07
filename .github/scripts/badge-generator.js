@@ -48,7 +48,7 @@ class BadgeGenerator {
 
   async getTopLanguages() {
     // Placeholder - would analyze repo languages
-    return ['JavaScript', 'Python', 'TypeScript'];
+    return ['Python', 'TypeScript', 'Swift', 'SQL', 'Java'];
   }
 
   async getCurrentStreak() {

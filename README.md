@@ -46,17 +46,19 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white" alt="Swift" />
+  <img src="https://img.shields.io/badge/SQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
 </p>
 
-### Frontend
+### Frontend & Design
 <p align="left">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
   <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" alt="Material-UI" />
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
 </p>
 
 ### Backend & Database
@@ -84,7 +86,7 @@
 </div>
 
 <div align="center">
-  <img height="240" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuryanshSS1011&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true&hide=html,css" alt="Language Distribution" />
+  <img height="240" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SuryanshSS1011&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&include_all_commits=true&hide=html,css,javascript" alt="Language Distribution" />
   <img height="195" src="https://github-readme-streak-stats.herokuapp.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&timezone=America/New_York" alt="Streak Stats"/>
 </div>
 
