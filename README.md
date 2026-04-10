@@ -74,17 +74,6 @@
   <img src="https://streak-stats.demolab.com/?user=SuryanshSS1011&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D" alt="GitHub Streak Stats"/>
 </div>
 
-## Featured Projects
-
-<div align="center">
-  <a href="https://github.com/SuryanshSS1011/Performance-Bugs-LLM">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=SuryanshSS1011&repo=Performance-Bugs-LLM&theme=tokyonight" alt="Performance-Bugs-LLM" />
-  </a>
-  <a href="https://github.com/CollegeNotesOrg/noteparser">
-    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=CollegeNotesOrg&repo=noteparser&theme=tokyonight" alt="noteparser" />
-  </a>
-</div>
-
 ##
 <p align="center">
   <i>I'm always interested in collaborating on innovative projects and research opportunities!</i>
