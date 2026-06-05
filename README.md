@@ -2,7 +2,7 @@ CS @ Penn State.
 
 I research safe and secure deployment of AI/ML systems using reinforcement learning — IEEE AITest 2025, LCTES '26 WIP, CNSM 2026 target.
 
-## Now
+## Currently working on
 
 - **OSS contributions** — check [my contribution log](https://github.com/SuryanshSS1011/github-contribution-log).
 - **[Warren](https://github.com/SuryanshSS1011/Warren)** — Turn your Wikipedia rabbit hole into a beautiful, shareable map. Next.js 16 + Supabase + Claude Haiku 4.5.
