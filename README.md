@@ -7,7 +7,7 @@ CS @ Penn State. I work on reliability and safety of AI/ML systems. I keep an [O
 ## Research
 
 - **[match-loss-to-cost](https://github.com/SuryanshSS1011/match-loss-to-cost)** — Decision-aware traffic forecasting with asymmetric losses and conformal capacity bands. *Submitted to CNSM 2026.* Evaluated on Abilene, GÉANT, and CESNET-TimeSeries24 across LSTM, DLinear, iTransformer, PatchTST, and DCRNN.
-- **[SecureCodeRL](https://github.com/SuryanshSS1011/SecureCodeRL)** — Scheduled Partial Credit RL for Reliable Code Generation with Small Language Models. *LCTES '26 WIP.* A binary→partial-credit curriculum lifts syntax validity to 63% on APPS+ stdin prompts, where binary-reward PPO regresses below the SFT baseline.
+- **[SecureCodeRL](https://github.com/SuryanshSS1011/SecureCodeRL)** — Scheduled Partial Credit RL for Reliable Code Generation with Small Language Models (WIP). [*LCTES '26*](https://doi.org/10.1145/3814943.3816167). A binary→partial-credit curriculum lifts syntax validity to 63% on APPS+ stdin prompts, where binary-reward PPO regresses below the SFT baseline.
 - **[Performance-Bugs-LLM](https://github.com/SuryanshSS1011/Performance-Bugs-LLM)** — Detecting and explaining Java performance bugs with a fine-tuned LLM. 490-bug dataset over 17 Defects4J projects. [*IEEE AITest 2025*](https://ieeexplore.ieee.org/document/11127255).
 
 ## Built
