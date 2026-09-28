@@ -5,6 +5,9 @@ I am an honors CS undergrad at Penn State working on AI/ML systems and static an
 - **Match Your Loss to Your Cost: Asymmetric Losses and Conformal Capacity Bands for Backbone Traffic Forecasting**  
   **Working paper**&nbsp;&nbsp;&nbsp;[code →](https://github.com/SuryanshSS1011/match-loss-to-cost)
 
+- **Continuous Retrieval-Grounded Reward Design for Secure Code Generation on Small Language Models (CARGO)**  
+  **ICTAI 2026**&nbsp;&nbsp;&nbsp;[code →](https://github.com/SuryanshSS1011/SecureCodeRL-RAG)
+
 - **Scheduled Partial-Credit RL for Reliable Code Generation with Small Language Models (WIP)**  
   **LCTES 2026**&nbsp;&nbsp;&nbsp;[code →](https://github.com/SuryanshSS1011/SecureCodeRL)&nbsp;&nbsp;[paper ↗](https://doi.org/10.1145/3814943.3816167)
 
